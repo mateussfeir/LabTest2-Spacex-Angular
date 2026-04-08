@@ -1,0 +1,125 @@
+.launch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.launch-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 1.25rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #d9e3ec;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.patch-image,
+.patch-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #eff7ff, #dcefff);
+  border: 1px solid #d0e2f2;
+}
+
+.patch-placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #56708a;
+}
+
+.badge {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.upcoming {
+  color: #7a4b00;
+  background: #fff1c7;
+}
+
+.badge.successful {
+  color: #0f6b45;
+  background: #d7f7e7;
+}
+
+.badge.failed {
+  color: #8c1d18;
+  background: #ffd9d6;
+}
+
+.card-body h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: #0f2235;
+}
+
+.launch-date {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2f5b7d;
+}
+
+.details {
+  margin: 0;
+  line-height: 1.6;
+  color: #334a60;
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5edf4;
+}
+
+.card-links a {
+  color: #005fc4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-links a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: #6a7f93;
+}
+
+.empty-state {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border: 1px dashed #bccedf;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.empty-state h2 {
+  margin-bottom: 0.5rem;
+  color: #16314a;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #587088;
+}

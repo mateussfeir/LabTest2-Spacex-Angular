@@ -1,0 +1,22 @@
+<form class="filter-form" [formGroup]="filterForm">
+  <div class="form-group">
+    <label for="searchText">Search Mission</label>
+    <input
+      id="searchText"
+      type="text"
+      formControlName="searchText"
+      placeholder="Type a launch name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="status">Filter Status</label>
+    <select id="status" formControlName="status">
+      @for (status of statusOptions; track status) {
+        <option [value]="status">
+          {{ status | titlecase }}
+        </option>
+      }
+    </select>
+  </div>
+</form>

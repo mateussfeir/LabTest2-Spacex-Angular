@@ -1,0 +1,65 @@
+@if (launches.length > 0) {
+  <section class="launch-grid">
+    @for (launch of launches; track launch.id) {
+      <article class="launch-card">
+        <div class="card-header">
+          @if (launch.links.patch.small) {
+            <img
+              class="patch-image"
+              [src]="launch.links.patch.small"
+              [alt]="launch.name + ' mission patch'"
+            />
+          } @else {
+            <div class="patch-placeholder">No Patch</div>
+          }
+
+          @switch (getLaunchStatus(launch)) {
+            @case ('upcoming') {
+              <span class="badge upcoming">Upcoming</span>
+            }
+            @case ('successful') {
+              <span class="badge successful">Successful</span>
+            }
+            @default {
+              <span class="badge failed">Failed</span>
+            }
+          }
+        </div>
+
+        <div class="card-body">
+          <h2>{{ launch.name }}</h2>
+          <p class="launch-date">
+            {{ launch.date_utc | date: 'medium' }}
+          </p>
+
+          @if (launch.details) {
+            <p class="details">{{ launch.details }}</p>
+          } @else {
+            <p class="details muted">No launch details available.</p>
+          }
+        </div>
+
+        <div class="card-links">
+          @if (launch.links.webcast || launch.links.article || launch.links.wikipedia) {
+            @if (launch.links.webcast) {
+              <a [href]="launch.links.webcast" target="_blank" rel="noopener noreferrer">Webcast</a>
+            }
+            @if (launch.links.article) {
+              <a [href]="launch.links.article" target="_blank" rel="noopener noreferrer">Article</a>
+            }
+            @if (launch.links.wikipedia) {
+              <a [href]="launch.links.wikipedia" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+            }
+          } @else {
+            <span class="muted">No external links available.</span>
+          }
+        </div>
+      </article>
+    }
+  </section>
+} @else {
+  <section class="empty-state">
+    <h2>No launches found</h2>
+    <p>Try changing the search text or status filter.</p>
+  </section>
+}

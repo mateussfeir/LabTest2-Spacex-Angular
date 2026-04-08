@@ -1,0 +1,86 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(84, 168, 255, 0.2), transparent 35%),
+    linear-gradient(180deg, #07111f 0%, #0f1d33 18%, #f4f8fb 18%, #eef4f8 100%);
+}
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero {
+  padding: 2.5rem 0 1.75rem;
+  color: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #89c2ff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0.9rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d4e7ff;
+}
+
+app-launch-filter {
+  display: block;
+  margin-top: 1rem;
+}
+
+.results-header {
+  margin: 1.5rem 0 1rem;
+  font-weight: 700;
+  color: #19324d;
+}
+
+.status-panel {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #d7e2ec;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.status-panel h2 {
+  margin: 0 0 0.5rem;
+  color: #14314b;
+}
+
+.status-panel p {
+  margin: 0;
+  color: #56708b;
+}
+
+.status-panel.error {
+  border-color: #f2c7c4;
+  background: #fff5f4;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-inline: 1rem;
+  }
+
+  .hero {
+    padding-top: 1.75rem;
+  }
+}
